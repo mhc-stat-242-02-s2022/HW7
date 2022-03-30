@@ -1,0 +1,72 @@
+---
+title: "Homework 6: Simple Linear Regression"
+subtitle: "STAT 242: Intermediate Statistics"
+author: "Your Name Here"
+output: pdf_document
+---
+
+Relevant Chapters: 8
+
+The code below just loads some packages and makes it so that enough digits are printed that you won't get confused by rounding errors.
+
+```{r, message = FALSE}
+library(dplyr) # functions like summarize
+library(ggplot2) # for making plots
+library(mosaic) # convenient interface to t.test function
+library(readr)
+options("pillar.sigfig" = 10) # print 10 significant digits in summarize output
+```
+
+## Pollen Removal: adapted from Sleuth3 Problem 8.19  
+
+"As part of a study to investigate reproductive strategies in plants, biologists recorded the time spent at sources of pollen and the proportions of pollen removed by bumble bee queens and honeybee workers pollinating a species of lily." These data were published in Harder and Thompson, "Evolutionary Options for Maximizing Pollen Dispersal of Animal-pollinated Plants" in the American Naturalist in 1989. 
+
+The R code below reads in the data, which contains three variables:
+
+ * `PollenRemoved` is the proportion of pollen removed
+ * `DurationOfVisit` is the duration of the pollinator's visit (in seconds)
+ * `BeeType` is a factor variable with two levels, "Queen" and "Worker"
+ 
+In this exercise, we will consider only the pollen removal data for bumblebee queens (`pollen_Q`). We are interested in using duration of visit to predict pollen removed.
+
+```{r}
+library(Sleuth3)
+pollen <- ex0327
+
+pollen_Q <- pollen %>%
+  filter(BeeType=="Queen")
+```
+
+**(a) Make a suitable plot to visualize these data.**
+
+```{r}
+
+```
+
+**(b) Make the following 4 plots: residual (vs. x) plot, density plot of the residuals, density plot for y, and density plot for x. Make sure to include appropriate titles so that it is clear which plot is which.**
+
+```{r}
+
+```
+
+**(c) Using your plots in (a) and (b), assess the assumptions of the linear model. Which assumptions, if any, appear to be satisfied? Which do not?**
+
+
+
+**(d) Find a suitable transformation of the data so that the linear regression conditions are as well satisfied as possible. Let us assume that the measurements for different bees in the sample can be regarded as independent. Document your entire trial-and-error process for finding a suitable transformation.**
+
+```{r}
+
+```
+
+**(e) Now, try fitting the regression model only for those times less than 31 seconds (excluding the two longest times). Assess the assumptions of the linear model for this restricted range. Is a transformation necessary? Do the assumptions appear to be satisfied in this case?**
+
+```{r}
+
+```
+
+*Note, if the linear regression model fits for a restricted range of the X's, then it is acceptable to fit the model with the other X's excluded and to report the range of X's for which the linear model holds. This is akin to reporting a limitation of the model.*
+
+
+
+
